@@ -18,10 +18,8 @@
 					"dataflow": {
 						"referenceName": "Dataflow1",
 						"type": "DataFlowReference",
-						"datasetParameters": {
-							"source1": {
-								"sourceFile": "defaultSourceFile"
-							}
+						"parameters": {
+							"tableName": "toString(currentTimestamp())"
 						}
 					},
 					"compute": {
