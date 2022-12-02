@@ -7,8 +7,7 @@
 		},
 		"parameters": {
 			"sourceFile": {
-				"type": "string",
-				"defaultValue": "defaultSourceFile"
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -24,6 +23,59 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "Detail",
+				"type": "String"
+			},
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "NoteLineCode",
+				"type": "String"
+			},
+			{
+				"name": "NoteLine",
+				"type": "String"
+			},
+			{
+				"name": "FSLineCode",
+				"type": "String"
+			},
+			{
+				"name": "FSLine",
+				"type": "String"
+			},
+			{
+				"name": "FSSubClassesCode",
+				"type": "String"
+			},
+			{
+				"name": "FSSubClasses",
+				"type": "String"
+			},
+			{
+				"name": "ClassCode",
+				"type": "String"
+			},
+			{
+				"name": "Classes",
+				"type": "String"
+			},
+			{
+				"name": "AccountType",
+				"type": "String"
+			},
+			{
+				"name": "ABCOTDCode",
+				"type": "String"
+			},
+			{
+				"name": "ABCOTD",
+				"type": "String"
+			}
+		]
 	}
 }
