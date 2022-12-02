@@ -11,7 +11,7 @@
 		"typeProperties": {
 			"schema": "dbo",
 			"table": {
-				"value": "@pipeline().parameters.sourceFile",
+				"value": "@pipeline().parameters.tableName",
 				"type": "Expression"
 			}
 		}
