@@ -28,7 +28,7 @@
 			"transformations": [],
 			"scriptLines": [
 				"parameters{",
-				"     tableName as string",
+				"     sourceFile as string",
 				"}",
 				"source(output(",
 				"          Detail as string,",
