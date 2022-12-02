@@ -1,0 +1,25 @@
+{
+	"name": "StorageEventCSVTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Gold",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/hdofilesystem200/blobs/CSV",
+			"blobPathEndsWith": ".csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/ffbc2bb3-2edb-467b-9256-290414ec27ff/resourceGroups/hdoresourcegroup200/providers/Microsoft.Storage/storageAccounts/hdodls200",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
