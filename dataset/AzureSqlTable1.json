@@ -10,7 +10,10 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "abc"
+			"table": {
+				"value": "@pipeline().parameters.sourceFile",
+				"type": "Expression"
+			}
 		}
 	}
 }
