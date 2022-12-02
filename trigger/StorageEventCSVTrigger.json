@@ -8,9 +8,6 @@
 				"pipelineReference": {
 					"referenceName": "Gold",
 					"type": "PipelineReference"
-				},
-				"parameters": {
-					"parameter_1": "@trigger().startTime"
 				}
 			}
 		],
