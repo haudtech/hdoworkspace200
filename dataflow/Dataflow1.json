@@ -20,7 +20,7 @@
 					},
 					"name": "sink1",
 					"rejectedDataLinkedService": {
-						"referenceName": "linkedService1",
+						"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
 						"type": "LinkedServiceReference"
 					}
 				}
@@ -41,7 +41,7 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'allErrors',",
 				"     outputRejectedData: true,",
-				"     rejectedData_container: 'hdofilesystem200',",
+				"     rejectedData_fileSystem: 'hdofilesystem200',",
 				"     rejectedData_folderPath: 'Error',",
 				"     transactionCommit: 'single',",
 				"     reportSuccessOnError: true) ~> sink1"
