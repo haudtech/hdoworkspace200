@@ -18,7 +18,11 @@
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "sink1",
+					"rejectedDataLinkedService": {
+						"referenceName": "linkedService1",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [],
@@ -40,10 +44,7 @@
 				"     rejectedData_container: 'hdofilesystem200',",
 				"     rejectedData_folderPath: 'Error',",
 				"     transactionCommit: 'single',",
-				"     reportSuccessOnError: true,",
-				"     outputAssertFailedRows: true,",
-				"     assertFailure_container: 'hdofilesystem200',",
-				"     assertFailure_folderPath: 'Error') ~> sink1"
+				"     reportSuccessOnError: true) ~> sink1"
 			]
 		}
 	}
