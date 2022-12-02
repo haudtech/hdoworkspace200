@@ -8,6 +8,9 @@
 		"parameters": {
 			"sourceFile": {
 				"type": "string"
+			},
+			"firstColumnName": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
