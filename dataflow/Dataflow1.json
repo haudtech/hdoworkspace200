@@ -27,9 +27,6 @@
 			],
 			"transformations": [],
 			"scriptLines": [
-				"parameters{",
-				"     parameter1 as string (FSLine)",
-				"}",
 				"source(output(",
 				"          Detail as string,",
 				"          Name as string,",
