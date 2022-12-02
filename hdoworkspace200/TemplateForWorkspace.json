@@ -54,11 +54,14 @@
 							"dataflow": {
 								"referenceName": "Dataflow1",
 								"type": "DataFlowReference",
-								"parameters": {},
+								"parameters": {
+									"parameter1": "NoteLine"
+								},
 								"datasetParameters": {
 									"source1": {},
 									"sink1": {}
-								}
+								},
+								"linkedServiceParameters": {}
 							},
 							"staging": {},
 							"compute": {
@@ -96,7 +99,10 @@
 				"schema": [],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "abc"
+					"table": {
+						"value": "@concat(pipeline().parameters.sourceFile, utcnow())",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
@@ -125,7 +131,60 @@
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": []
+				"schema": [
+					{
+						"name": "Detail",
+						"type": "String"
+					},
+					{
+						"name": "Name",
+						"type": "String"
+					},
+					{
+						"name": "NoteLineCode",
+						"type": "String"
+					},
+					{
+						"name": "NoteLine",
+						"type": "String"
+					},
+					{
+						"name": "FSLineCode",
+						"type": "String"
+					},
+					{
+						"name": "FSLine",
+						"type": "String"
+					},
+					{
+						"name": "FSSubClassesCode",
+						"type": "String"
+					},
+					{
+						"name": "FSSubClasses",
+						"type": "String"
+					},
+					{
+						"name": "ClassCode",
+						"type": "String"
+					},
+					{
+						"name": "Classes",
+						"type": "String"
+					},
+					{
+						"name": "AccountType",
+						"type": "String"
+					},
+					{
+						"name": "ABCOTDCode",
+						"type": "String"
+					},
+					{
+						"name": "ABCOTD",
+						"type": "String"
+					}
+				]
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/linkedServices/hdoworkspace200-WorkspaceDefaultStorage')]"
@@ -218,7 +277,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
+				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
@@ -293,7 +352,25 @@
 					],
 					"transformations": [],
 					"scriptLines": [
-						"source(allowSchemaDrift: true,",
+						"parameters{",
+						"     parameter1 as string",
+						"}",
+						"source(output(",
+						"          Detail as string,",
+						"          Name as string,",
+						"          NoteLineCode as string,",
+						"          NoteLine as string,",
+						"          FSLineCode as string,",
+						"          FSLine as string,",
+						"          FSSubClassesCode as string,",
+						"          FSSubClasses as string,",
+						"          ClassCode as string,",
+						"          Classes as string,",
+						"          AccountType as string,",
+						"          ABCOTDCode as string,",
+						"          ABCOTD as string",
+						"     ),",
+						"     allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     ignoreNoFilesFound: false) ~> source1",
 						"source1 sink(allowSchemaDrift: true,",
