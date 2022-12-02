@@ -11,7 +11,7 @@
 		"typeProperties": {
 			"schema": "dbo",
 			"table": {
-				"value": "@concat(pipeline().parameters.parameter_1, utcnow())",
+				"value": "abacdsfs",
 				"type": "Expression"
 			}
 		}
