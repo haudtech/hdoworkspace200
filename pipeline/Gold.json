@@ -13,14 +13,15 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "p1"
+					}
+				],
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "Dataflow1",
-						"type": "DataFlowReference",
-						"parameters": {
-							"tableName": "toString(currentTimestamp())"
-						}
+						"type": "DataFlowReference"
 					},
 					"compute": {
 						"coreCount": 8,
