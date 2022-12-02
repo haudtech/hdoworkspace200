@@ -5,15 +5,6 @@
 			"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"sourceFile": {
-				"type": "string"
-			},
-			"sourceFolder": {
-				"type": "string",
-				"defaultValue": "CSV"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
