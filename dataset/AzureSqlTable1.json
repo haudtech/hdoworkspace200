@@ -11,7 +11,7 @@
 		"typeProperties": {
 			"schema": "dbo",
 			"table": {
-				"value": "@pipeline().parameters.tableName",
+				"value": "@concat(pipeline().parameters.sourceFile, utcnow())",
 				"type": "Expression"
 			}
 		}
