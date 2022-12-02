@@ -13,11 +13,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "p1"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "Dataflow1",
