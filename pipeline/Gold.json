@@ -29,24 +29,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"parameter_1": {
-				"type": "string",
-				"defaultValue": "parameter_1_default"
-			},
-			"parameter_2": {
-				"type": "string"
-			},
-			"parameter_3": {
-				"type": "string"
-			},
-			"parameter_4": {
-				"type": "string"
-			},
-			"parameter_5": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
