@@ -17,13 +17,7 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "Dataflow1",
-						"type": "DataFlowReference",
-						"datasetParameters": {
-							"source1": {
-								"sourceFile": "abcd",
-								"sourceFolder": "CSV"
-							}
-						}
+						"type": "DataFlowReference"
 					},
 					"compute": {
 						"coreCount": 8,
