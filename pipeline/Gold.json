@@ -32,23 +32,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"parameter_1": {
-				"type": "string"
-			},
-			"parameter_2": {
-				"type": "string"
-			},
-			"parameter_3": {
-				"type": "string"
-			},
-			"parameter_4": {
-				"type": "string"
-			},
-			"parameter_5": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
