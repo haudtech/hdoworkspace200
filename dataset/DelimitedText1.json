@@ -19,7 +19,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "CSV",
+				"folderPath": "blobs/CSV",
 				"fileSystem": "hdofilesystem200"
 			},
 			"columnDelimiter": ",",
