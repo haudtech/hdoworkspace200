@@ -10,10 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@pipeline().parameters.sourceFile",
-					"type": "Expression"
-				},
 				"folderPath": "blobs/CSV",
 				"fileSystem": "hdofilesystem200"
 			},
