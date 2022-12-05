@@ -11,7 +11,7 @@
 		"typeProperties": {
 			"schema": "dbo",
 			"table": {
-				"value": "abacdsfs",
+				"value": "@pipeline().parameters.sourceFile",
 				"type": "Expression"
 			}
 		}
