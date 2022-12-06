@@ -23,9 +23,6 @@
 			],
 			"transformations": [],
 			"scriptLines": [
-				"parameters{",
-				"     filename as string ('TB-hdo-template.csv')",
-				"}",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
