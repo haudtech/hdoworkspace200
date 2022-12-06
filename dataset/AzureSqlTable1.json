@@ -8,6 +8,9 @@
 		"parameters": {
 			"nameTable": {
 				"type": "string"
+			},
+			"sheetname": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
