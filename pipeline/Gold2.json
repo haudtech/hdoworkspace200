@@ -19,12 +19,6 @@
 						"referenceName": "Dataflow2",
 						"type": "DataFlowReference",
 						"datasetParameters": {
-							"source1": {
-								"filename": {
-									"value": "@pipeline().parameters.filename",
-									"type": "Expression"
-								}
-							},
 							"sink1": {
 								"nameTable": "@pipeline().parameters.filename"
 							}
