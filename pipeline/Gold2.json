@@ -24,6 +24,9 @@
 									"value": "@pipeline().parameters.filename",
 									"type": "Expression"
 								}
+							},
+							"sink1": {
+								"nameTable": "@pipeline().parameters.filename"
 							}
 						}
 					},
