@@ -30,7 +30,7 @@
 		"parameters": {
 			"filename": {
 				"type": "string",
-				"defaultValue": "'TB-hdo-template.csv'"
+				"defaultValue": "TB-hdo-template.csv"
 			}
 		},
 		"annotations": []
