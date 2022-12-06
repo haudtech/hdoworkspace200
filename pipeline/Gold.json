@@ -27,12 +27,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"filename": {
-				"type": "string",
-				"defaultValue": "TB-hdo-template.csv"
-			}
-		},
 		"annotations": []
 	}
 }
