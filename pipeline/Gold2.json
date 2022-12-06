@@ -19,6 +19,10 @@
 						"referenceName": "Dataflow2",
 						"type": "DataFlowReference",
 						"datasetParameters": {
+							"source1": {
+								"filename": "@pipeline().parameters.filename",
+								"sheetname": "@pipeline().parameters.sheetname"
+							},
 							"sink1": {
 								"nameTable": "@pipeline().parameters.filename"
 							}
