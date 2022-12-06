@@ -363,7 +363,8 @@
 							"value": "@dataset().filename",
 							"type": "Expression"
 						},
-						"fileSystem": "Excel"
+						"folderPath": "Excel",
+						"fileSystem": "hdofilesystem200"
 					},
 					"firstRowAsHeader": true
 				},
