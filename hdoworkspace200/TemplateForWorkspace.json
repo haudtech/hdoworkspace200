@@ -185,7 +185,7 @@
 					"sources": [
 						{
 							"dataset": {
-								"referenceName": "DelimitedText1",
+								"referenceName": "Excel1",
 								"type": "DatasetReference"
 							},
 							"name": "source1"
@@ -219,7 +219,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('workspaceId'), '/datasets/DelimitedText1')]",
+				"[concat(variables('workspaceId'), '/datasets/Excel1')]",
 				"[concat(variables('workspaceId'), '/datasets/AzureSqlTable1')]"
 			]
 		},
@@ -235,6 +235,9 @@
 				"parameters": {
 					"nameTable": {
 						"type": "string"
+					},
+					"sheetname": {
+						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -243,7 +246,7 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": {
-						"value": "@dataset().nameTable",
+						"value": "@concat(string(dataset().nameTable),string(dataset().sheetname))",
 						"type": "Expression"
 					}
 				}
@@ -277,16 +280,28 @@
 								"parameters": {},
 								"datasetParameters": {
 									"source1": {
-										"filename": {
-											"value": "@pipeline().parameters.filename",
-											"type": "Expression"
+										"filename": "@pipeline().parameters.filename",
+										"sheetname": "@pipeline().parameters.sheetname"
+									},
+									"sink1": {
+										"nameTable": "@pipeline().parameters.filename",
+										"sheetname": "@pipeline().parameters.sheetname"
+									}
+								},
+								"linkedServiceParameters": {
+									"source1": {
+										"schemaLinkedService": {
+											"filename": "@pipeline().parameters.filename",
+											"sheetname": "@pipeline().parameters.sheetname"
 										}
 									},
 									"sink1": {
-										"nameTable": "@pipeline().parameters.filename"
+										"schemaLinkedService": {
+											"nameTable": "@pipeline().parameters.filename",
+											"sheetname": "@pipeline().parameters.sheetname"
+										}
 									}
-								},
-								"linkedServiceParameters": {}
+								}
 							},
 							"staging": {},
 							"compute": {
@@ -305,6 +320,10 @@
 					"filename": {
 						"type": "string",
 						"defaultValue": "template.csv"
+					},
+					"sheetname": {
+						"type": "string",
+						"defaultValue": "sheet"
 					}
 				},
 				"annotations": []
@@ -312,6 +331,46 @@
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
 				"[concat(variables('workspaceId'), '/dataflows/Dataflow2')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Excel1')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"filename": {
+						"type": "string"
+					},
+					"sheetname": {
+						"type": "string"
+					}
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": {
+						"value": "@dataset().sheetname",
+						"type": "Expression"
+					},
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@dataset().filename",
+							"type": "Expression"
+						},
+						"fileSystem": "Excel"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/hdoworkspace200-WorkspaceDefaultStorage')]"
 			]
 		}
 	]
