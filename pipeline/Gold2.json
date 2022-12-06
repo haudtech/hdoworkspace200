@@ -24,7 +24,16 @@
 								"sheetname": "@pipeline().parameters.sheetname"
 							},
 							"sink1": {
-								"nameTable": "@pipeline().parameters.filename"
+								"nameTable": "@pipeline().parameters.filename",
+								"sheetname": "@pipeline().parameters.sheetname"
+							}
+						},
+						"linkedServiceParameters": {
+							"source1": {
+								"schemaLinkedService": {
+									"filename": "@pipeline().parameters.filename",
+									"sheetname": "@pipeline().parameters.sheetname"
+								}
 							}
 						}
 					},
