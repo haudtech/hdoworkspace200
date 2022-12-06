@@ -22,93 +22,12 @@
 		"hdoworkspace200-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://hdodls200.dfs.core.windows.net"
-		},
-		"StorageEventCSVTrigger_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/ffbc2bb3-2edb-467b-9256-290414ec27ff/resourceGroups/hdoresourcegroup200/providers/Microsoft.Storage/storageAccounts/hdodls200"
 		}
 	},
 	"variables": {
 		"workspaceId": "[concat('Microsoft.Synapse/workspaces/', parameters('workspaceName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('workspaceName'), '/Gold')]",
-			"type": "Microsoft.Synapse/workspaces/pipelines",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"activities": [
-					{
-						"name": "Data flow1",
-						"type": "ExecuteDataFlow",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataflow": {
-								"referenceName": "Dataflow1",
-								"type": "DataFlowReference",
-								"parameters": {
-									"parameter1": "NoteLine"
-								},
-								"datasetParameters": {
-									"source1": {},
-									"sink1": {}
-								},
-								"linkedServiceParameters": {}
-							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine",
-							"runConcurrently": true,
-							"continueOnError": true
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": []
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/dataflows/Dataflow1')]",
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/AzureSqlTable1')]",
-			"type": "Microsoft.Synapse/workspaces/datasets",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": {
-						"value": "@concat(pipeline().parameters.sourceFile, utcnow())",
-						"type": "Expression"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/linkedServices/AzureSqlDatabase1')]"
-			]
-		},
 		{
 			"name": "[concat(parameters('workspaceName'), '/DelimitedText1')]",
 			"type": "Microsoft.Synapse/workspaces/datasets",
@@ -123,6 +42,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@pipeline().parameters.filename",
+							"type": "Expression"
+						},
 						"folderPath": "blobs/CSV",
 						"fileSystem": "hdofilesystem200"
 					},
@@ -131,60 +54,7 @@
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": [
-					{
-						"name": "Detail",
-						"type": "String"
-					},
-					{
-						"name": "Name",
-						"type": "String"
-					},
-					{
-						"name": "NoteLineCode",
-						"type": "String"
-					},
-					{
-						"name": "NoteLine",
-						"type": "String"
-					},
-					{
-						"name": "FSLineCode",
-						"type": "String"
-					},
-					{
-						"name": "FSLine",
-						"type": "String"
-					},
-					{
-						"name": "FSSubClassesCode",
-						"type": "String"
-					},
-					{
-						"name": "FSSubClasses",
-						"type": "String"
-					},
-					{
-						"name": "ClassCode",
-						"type": "String"
-					},
-					{
-						"name": "Classes",
-						"type": "String"
-					},
-					{
-						"name": "AccountType",
-						"type": "String"
-					},
-					{
-						"name": "ABCOTDCode",
-						"type": "String"
-					},
-					{
-						"name": "ABCOTD",
-						"type": "String"
-					}
-				]
+				"schema": []
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/linkedServices/hdoworkspace200-WorkspaceDefaultStorage')]"
@@ -272,37 +142,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/StorageEventCSVTrigger')]",
-			"type": "Microsoft.Synapse/workspaces/triggers",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Gold",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "BlobEventsTrigger",
-				"typeProperties": {
-					"blobPathBeginsWith": "/hdofilesystem200/blobs/",
-					"blobPathEndsWith": "csv",
-					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('StorageEventCSVTrigger_properties_typeProperties_scope')]",
-					"events": [
-						"Microsoft.Storage.BlobCreated"
-					]
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/pipelines/Gold')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]",
 			"type": "Microsoft.Synapse/workspaces/integrationRuntimes",
 			"apiVersion": "2019-06-01-preview",
@@ -322,7 +161,17 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/Dataflow1')]",
+			"name": "[concat(parameters('workspaceName'), '/WorkspaceSystemIdentity')]",
+			"type": "Microsoft.Synapse/workspaces/credentials",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"type": "ManagedIdentity",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Dataflow2')]",
 			"type": "Microsoft.Synapse/workspaces/dataflows",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
@@ -343,34 +192,12 @@
 								"referenceName": "AzureSqlTable1",
 								"type": "DatasetReference"
 							},
-							"name": "sink1",
-							"rejectedDataLinkedService": {
-								"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
-								"type": "LinkedServiceReference"
-							}
+							"name": "sink1"
 						}
 					],
 					"transformations": [],
 					"scriptLines": [
-						"parameters{",
-						"     parameter1 as string",
-						"}",
-						"source(output(",
-						"          Detail as string,",
-						"          Name as string,",
-						"          NoteLineCode as string,",
-						"          NoteLine as string,",
-						"          FSLineCode as string,",
-						"          FSLine as string,",
-						"          FSSubClassesCode as string,",
-						"          FSSubClasses as string,",
-						"          ClassCode as string,",
-						"          Classes as string,",
-						"          AccountType as string,",
-						"          ABCOTDCode as string,",
-						"          ABCOTD as string",
-						"     ),",
-						"     allowSchemaDrift: true,",
+						"source(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     ignoreNoFilesFound: false) ~> source1",
 						"source1 sink(allowSchemaDrift: true,",
@@ -382,30 +209,86 @@
 						"     format: 'table',",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
-						"     errorHandlingOption: 'allErrors',",
-						"     outputRejectedData: true,",
-						"     rejectedData_fileSystem: 'hdofilesystem200',",
-						"     rejectedData_folderPath: 'Error',",
-						"     transactionCommit: 'single',",
-						"     reportSuccessOnError: true) ~> sink1"
+						"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
 					]
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/datasets/DelimitedText1')]",
-				"[concat(variables('workspaceId'), '/datasets/AzureSqlTable1')]",
-				"[concat(variables('workspaceId'), '/linkedServices/hdoworkspace200-WorkspaceDefaultStorage')]"
+				"[concat(variables('workspaceId'), '/datasets/AzureSqlTable1')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/WorkspaceSystemIdentity')]",
-			"type": "Microsoft.Synapse/workspaces/credentials",
+			"name": "[concat(parameters('workspaceName'), '/AzureSqlTable1')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
-				"type": "ManagedIdentity",
-				"typeProperties": {}
+				"linkedServiceName": {
+					"referenceName": "AzureSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": {
+						"value": "@pipeline().parameters.filename",
+						"type": "Expression"
+					}
+				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/AzureSqlDatabase1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/Gold2')]",
+			"type": "Microsoft.Synapse/workspaces/pipelines",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"activities": [
+					{
+						"name": "Dataflow2",
+						"type": "ExecuteDataFlow",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataflow": {
+								"referenceName": "Dataflow2",
+								"type": "DataFlowReference",
+								"parameters": {},
+								"datasetParameters": {
+									"source1": {},
+									"sink1": {}
+								}
+							},
+							"staging": {},
+							"compute": {
+								"coreCount": 8,
+								"computeType": "General"
+							},
+							"traceLevel": "Fine"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
+				"[concat(variables('workspaceId'), '/dataflows/Dataflow2')]"
+			]
 		}
 	]
 }

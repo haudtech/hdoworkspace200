@@ -16,9 +16,6 @@
 		},
 		"hdoworkspace200-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://hdodls200.dfs.core.windows.net"
-		},
-		"StorageEventCSVTrigger_properties_typeProperties_scope": {
-			"value": "/subscriptions/ffbc2bb3-2edb-467b-9256-290414ec27ff/resourceGroups/hdoresourcegroup200/providers/Microsoft.Storage/storageAccounts/hdodls200"
 		}
 	}
 }
