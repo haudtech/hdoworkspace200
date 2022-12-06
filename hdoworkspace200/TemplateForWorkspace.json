@@ -37,12 +37,20 @@
 					"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"filename": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "template01.csv",
+						"fileName": {
+							"value": "@dataset().filename",
+							"type": "Expression"
+						},
 						"folderPath": "blobs/CSV",
 						"fileSystem": "hdofilesystem200"
 					},
@@ -224,12 +232,20 @@
 					"referenceName": "AzureSqlDatabase1",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"nameTable": {
+						"type": "string"
+					}
+				},
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "a2"
+					"table": {
+						"value": "@dataset().nameTable",
+						"type": "Expression"
+					}
 				}
 			},
 			"dependsOn": [
@@ -260,9 +276,17 @@
 								"type": "DataFlowReference",
 								"parameters": {},
 								"datasetParameters": {
-									"source1": {},
-									"sink1": {}
-								}
+									"source1": {
+										"filename": {
+											"value": "@pipeline().parameters.filename",
+											"type": "Expression"
+										}
+									},
+									"sink1": {
+										"nameTable": "@pipeline().parameters.filename"
+									}
+								},
+								"linkedServiceParameters": {}
 							},
 							"staging": {},
 							"compute": {
@@ -276,6 +300,12 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"parameters": {
+					"filename": {
+						"type": "string",
+						"defaultValue": "template.csv"
+					}
 				},
 				"annotations": []
 			},
