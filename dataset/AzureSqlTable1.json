@@ -19,7 +19,7 @@
 		"typeProperties": {
 			"schema": "dbo",
 			"table": {
-				"value": "@concat(string(dataset().nameTable),string(dataset().sheetname))",
+				"value": "@replace(concat(dataset().nameTable,dataset().sheetname), '.', '')",
 				"type": "Expression"
 			}
 		}
