@@ -24,7 +24,14 @@
 								"sheetname": "@pipeline().parameters.sheetname"
 							},
 							"sink1": {
-								"tableName": "@pipeline().parameters.filename"
+								"tableName": {
+									"value": "@pipeline().parameters.tablename",
+									"type": "Expression"
+								},
+								"schemaName": {
+									"value": "@pipeline().parameters.schemaname",
+									"type": "Expression"
+								}
 							}
 						}
 					},
