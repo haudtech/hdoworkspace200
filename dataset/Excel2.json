@@ -8,8 +8,12 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
+			"sheetName": "sheet01",
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"fileName": "template01.xlsx",
+				"folderPath": "Excel",
+				"fileSystem": "hdofilesystem200"
 			}
 		},
 		"schema": []
