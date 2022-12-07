@@ -24,22 +24,7 @@
 								"sheetname": "@pipeline().parameters.sheetname"
 							},
 							"sink1": {
-								"nameTable": "@pipeline().parameters.filename",
-								"sheetname": "@pipeline().parameters.sheetname"
-							}
-						},
-						"linkedServiceParameters": {
-							"source1": {
-								"schemaLinkedService": {
-									"filename": "@pipeline().parameters.filename",
-									"sheetname": "@pipeline().parameters.sheetname"
-								}
-							},
-							"sink1": {
-								"schemaLinkedService": {
-									"nameTable": "@pipeline().parameters.filename",
-									"sheetname": "@pipeline().parameters.sheetname"
-								}
+								"tableName": "@pipeline().parameters.filename"
 							}
 						}
 					},
@@ -59,6 +44,12 @@
 			"sheetname": {
 				"type": "string",
 				"defaultValue": "sheet"
+			},
+			"tablename": {
+				"type": "string"
+			},
+			"schemaname": {
+				"type": "string"
 			}
 		},
 		"annotations": []
