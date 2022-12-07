@@ -17,9 +17,12 @@
 		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
+			"schema": {
+				"value": "@dataset().schemaName",
+				"type": "Expression"
+			},
 			"table": {
-				"value": "@replace(concat(dataset().nameTable,dataset().sheetname), '.', '')",
+				"value": "@dataset().tableName",
 				"type": "Expression"
 			}
 		}
