@@ -55,7 +55,7 @@
 				"typeProperties": {
 					"variableName": "datasetname",
 					"value": {
-						"value": "@string(activity('Lookup1').output.value[0])",
+						"value": "@string(activity('Lookup1').output.value[0].Prop_0)",
 						"type": "Expression"
 					}
 				}
@@ -138,7 +138,7 @@
 				"typeProperties": {
 					"variableName": "reportname",
 					"value": {
-						"value": "@string(activity('Lookup1').output.value[1])",
+						"value": "@string(activity('Lookup1').output.value[1].Prop_0)",
 						"type": "Expression"
 					}
 				}
