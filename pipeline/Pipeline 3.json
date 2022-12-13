@@ -111,20 +111,6 @@
 												"type": "Expression"
 											}
 										}
-									},
-									"linkedServiceParameters": {
-										"source1": {
-											"schemaLinkedService": {
-												"sheetIndex": {
-													"value": "@pipeline().parameters.sheetIndex",
-													"type": "Expression"
-												},
-												"filename": {
-													"value": "@pipeline().parameters.filename",
-													"type": "Expression"
-												}
-											}
-										}
 									}
 								},
 								"compute": {
