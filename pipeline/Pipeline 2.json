@@ -18,6 +18,12 @@
 					"dataflow": {
 						"referenceName": "Dataflow3",
 						"type": "DataFlowReference",
+						"parameters": {
+							"dtfilename": {
+								"value": "'@{pipeline().parameters.dtfilename}'",
+								"type": "Expression"
+							}
+						},
 						"datasetParameters": {
 							"sink1": {
 								"filename": {
