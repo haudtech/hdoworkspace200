@@ -115,12 +115,6 @@
 		"variables": {
 			"datasetname": {
 				"type": "String"
-			},
-			"reportname": {
-				"type": "String"
-			},
-			"reportname1": {
-				"type": "String"
 			}
 		},
 		"annotations": []
