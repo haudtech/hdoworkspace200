@@ -27,6 +27,16 @@
 				}
 			}
 		],
+		"parameters": {
+			"dtfilename": {
+				"type": "string",
+				"defaultValue": "dtfilename"
+			},
+			"filename": {
+				"type": "string",
+				"defaultValue": "filename"
+			}
+		},
 		"annotations": []
 	}
 }
