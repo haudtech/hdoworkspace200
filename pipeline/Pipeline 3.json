@@ -25,7 +25,13 @@
 					},
 					"dataset": {
 						"referenceName": "Excel2",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"sheetIndex": {
+								"value": "@pipeline().parameters.sheetIndex",
+								"type": "Expression"
+							}
+						}
 					},
 					"firstRowOnly": false
 				}
