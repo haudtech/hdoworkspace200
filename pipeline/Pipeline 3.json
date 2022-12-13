@@ -49,29 +49,9 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "datasetname",
+					"variableName": "reportname1",
 					"value": {
 						"value": "@activity('Lookup1').output.value[0]",
-						"type": "Expression"
-					}
-				}
-			},
-			{
-				"name": "Set reporting name",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "reportname",
-					"value": {
-						"value": "@activity('Lookup1').output.value[1]",
 						"type": "Expression"
 					}
 				}
@@ -137,6 +117,9 @@
 				"type": "String"
 			},
 			"reportname": {
+				"type": "String"
+			},
+			"reportname1": {
 				"type": "String"
 			}
 		},
