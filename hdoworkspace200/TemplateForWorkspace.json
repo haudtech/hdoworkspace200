@@ -302,20 +302,7 @@
 													}
 												}
 											},
-											"linkedServiceParameters": {
-												"source1": {
-													"schemaLinkedService": {
-														"sheetIndex": {
-															"value": "@pipeline().parameters.sheetIndex",
-															"type": "Expression"
-														},
-														"filename": {
-															"value": "@pipeline().parameters.filename",
-															"type": "Expression"
-														}
-													}
-												}
-											}
+											"linkedServiceParameters": {}
 										},
 										"staging": {},
 										"compute": {
@@ -375,7 +362,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/datasets/Excel2')]",
-				"[concat(variables('workspaceId'), '/dataflows/Dataflow4')]"
+				"[concat(variables('workspaceId'), '/dataflows/Dataflow4')]",
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
 			]
 		},
 		{
