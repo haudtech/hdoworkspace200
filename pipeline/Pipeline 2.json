@@ -17,7 +17,22 @@
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "Dataflow3",
-						"type": "DataFlowReference"
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"sink1": {
+								"filename": {
+									"value": "@pipeline().parameters.filename",
+									"type": "Expression"
+								}
+							}
+						},
+						"linkedServiceParameters": {
+							"sink1": {
+								"schemaLinkedService": {
+									"filename": "@pipeline().parameters.filename"
+								}
+							}
+						}
 					},
 					"compute": {
 						"coreCount": 8,
