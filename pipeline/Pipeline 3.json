@@ -37,8 +37,8 @@
 				}
 			},
 			{
-				"name": "Set variable1",
-				"type": "SetVariable",
+				"name": "ForEach1",
+				"type": "ForEach",
 				"dependsOn": [
 					{
 						"activity": "Lookup1",
@@ -49,8 +49,19 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "var1",
-					"value": ""
+					"items": {
+						"value": "@activity('Lookup1').output.value",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "dataset name",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": []
+						}
+					]
 				}
 			}
 		],
@@ -58,11 +69,6 @@
 			"sheetIndex": {
 				"type": "string",
 				"defaultValue": "1"
-			}
-		},
-		"variables": {
-			"var1": {
-				"type": "String"
 			}
 		},
 		"annotations": []
