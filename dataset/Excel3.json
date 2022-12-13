@@ -21,7 +21,8 @@
 			"sheetIndex": {
 				"value": "@dataset().sheetname",
 				"type": "Expression"
-			}
+			},
+			"range": "A5:"
 		},
 		"schema": []
 	}
