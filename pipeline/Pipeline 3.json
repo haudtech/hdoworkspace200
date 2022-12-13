@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
+				"name": "Lookupfordatasetname",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -41,7 +41,7 @@
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "Lookup1",
+						"activity": "Lookupfordatasetname",
 						"dependencyConditions": [
 							"Succeeded"
 						]
