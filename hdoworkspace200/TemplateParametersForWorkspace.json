@@ -9,7 +9,7 @@
 			"value": ""
 		},
 		"hdoworkspace200-WorkspaceDefaultSqlServer_connectionString": {
-			"value": ""
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:hdoworkspace200.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"linkedService1_connectionString": {
 			"value": ""
