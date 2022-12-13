@@ -23,6 +23,9 @@
 			],
 			"transformations": [],
 			"scriptLines": [
+				"parameters{",
+				"     dtfilename as string",
+				"}",
 				"source(output(",
 				"          {_col0_} as string,",
 				"          {_col1_} as string,",
@@ -44,11 +47,13 @@
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
+				"     partitionFileNames:[($dtfilename)],",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
