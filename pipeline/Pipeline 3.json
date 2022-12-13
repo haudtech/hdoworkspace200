@@ -70,7 +70,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@or(empty(variables('reportname')), empty(variables('datasetname')))",
+						"value": "@and(not(empty(variables('reportname'))), not(empty(variables('datasetname'))))",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
