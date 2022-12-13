@@ -95,7 +95,7 @@
 									"referenceName": "Dataflow4",
 									"type": "DataFlowReference",
 									"datasetParameters": {
-										"source1": {
+										"source7": {
 											"sheetIndex": {
 												"value": "@pipeline().parameters.sheetIndex",
 												"type": "Expression"
@@ -146,8 +146,8 @@
 		],
 		"parameters": {
 			"sheetIndex": {
-				"type": "string",
-				"defaultValue": "1"
+				"type": "int",
+				"defaultValue": 1
 			},
 			"filename": {
 				"type": "string",
