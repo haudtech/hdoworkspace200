@@ -1,0 +1,28 @@
+{
+	"name": "Excel3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sheetname": {
+				"type": "int"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Excel",
+				"fileSystem": "hdofilesystem200"
+			},
+			"sheetIndex": {
+				"value": "@dataset().sheetname",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
