@@ -95,16 +95,6 @@
 									"referenceName": "Dataflow4",
 									"type": "DataFlowReference",
 									"datasetParameters": {
-										"source7": {
-											"sheetIndex": {
-												"value": "@pipeline().parameters.sheetIndex",
-												"type": "Expression"
-											},
-											"filename": {
-												"value": "@pipeline().parameters.filename",
-												"type": "Expression"
-											}
-										},
 										"sink1": {
 											"csvfilename": {
 												"value": "@concat(variables('datasetname'), '_', variables('reportname'), '.csv')",
