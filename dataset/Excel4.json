@@ -1,0 +1,35 @@
+{
+	"name": "Excel4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sheetIndex": {
+				"type": "int"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"folderPath": "Excel",
+				"fileSystem": "hdofilesystem200"
+			},
+			"sheetIndex": {
+				"value": "@dataset().sheetIndex",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}
