@@ -59,7 +59,14 @@
 			{
 				"name": "If Condition1",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Set reporting name",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
@@ -126,7 +133,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "report",
-					"value": ""
+					"value": {
+						"value": "@activity('Lookup1').output.value[1]",
+						"type": "Expression"
+					}
 				}
 			}
 		],
