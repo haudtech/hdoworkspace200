@@ -30,11 +30,11 @@
 		"parameters": {
 			"dtfilename": {
 				"type": "string",
-				"defaultValue": "dtfilename"
+				"defaultValue": "dtfilename.parquet"
 			},
 			"filename": {
 				"type": "string",
-				"defaultValue": "filename"
+				"defaultValue": "filename.parquet"
 			}
 		},
 		"annotations": []
