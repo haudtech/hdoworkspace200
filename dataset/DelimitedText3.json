@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@string('GKGKJHGJ')",
+					"value": "abc.csv",
 					"type": "Expression"
 				},
 				"folderPath": "CSV",
