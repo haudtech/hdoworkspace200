@@ -73,7 +73,7 @@
 						"value": "@and(not(empty(variables('reportname'))), not(empty(variables('datasetname'))))",
 						"type": "Expression"
 					},
-					"ifFalseActivities": [
+					"ifTrueActivities": [
 						{
 							"name": "Data flow1",
 							"type": "ExecuteDataFlow",
@@ -89,7 +89,19 @@
 							"typeProperties": {
 								"dataflow": {
 									"referenceName": "Dataflow4",
-									"type": "DataFlowReference"
+									"type": "DataFlowReference",
+									"datasetParameters": {
+										"source1": {
+											"sheetname": {
+												"value": "@pipeline().parameters.sheetIndex",
+												"type": "Expression"
+											},
+											"filename": {
+												"value": "@pipeline().parameters.filename",
+												"type": "Expression"
+											}
+										}
+									}
 								},
 								"compute": {
 									"coreCount": 8,
