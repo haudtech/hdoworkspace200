@@ -30,6 +30,10 @@
 							"sheetIndex": {
 								"value": "@pipeline().parameters.sheetIndex",
 								"type": "Expression"
+							},
+							"filename": {
+								"value": "@pipeline().parameters.filename",
+								"type": "Expression"
 							}
 						}
 					},
