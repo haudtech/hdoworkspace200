@@ -113,7 +113,13 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@or(empty(variables('reportname')), empty(variables('datasetname')))",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
