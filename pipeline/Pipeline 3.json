@@ -107,7 +107,7 @@
 										},
 										"sink1": {
 											"csvfilename": {
-												"value": "@concat(variables('datasetname'), '_', variables('reportname'), pipeline().parameters.sheetIndex, '.csv')",
+												"value": "@concat(variables('datasetname'), '_', variables('reportname'), '.csv')",
 												"type": "Expression"
 											}
 										}
