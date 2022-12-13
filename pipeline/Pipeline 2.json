@@ -25,6 +25,9 @@
 							}
 						},
 						"datasetParameters": {
+							"source1": {
+								"extensionfile": "nothing"
+							},
 							"sink1": {
 								"filename": {
 									"value": "@pipeline().parameters.filename",
@@ -33,6 +36,11 @@
 							}
 						},
 						"linkedServiceParameters": {
+							"source1": {
+								"schemaLinkedService": {
+									"extensionfile": "nothing"
+								}
+							},
 							"sink1": {
 								"schemaLinkedService": {
 									"filename": "@pipeline().parameters.filename"
