@@ -1,0 +1,76 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "CSV",
+				"fileSystem": "hdofilesystem200"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "_col0_",
+				"type": "String"
+			},
+			{
+				"name": "_col1_",
+				"type": "String"
+			},
+			{
+				"name": "_col2_",
+				"type": "String"
+			},
+			{
+				"name": "_col3_",
+				"type": "String"
+			},
+			{
+				"name": "_col4_",
+				"type": "String"
+			},
+			{
+				"name": "_col5_",
+				"type": "String"
+			},
+			{
+				"name": "_col6_",
+				"type": "String"
+			},
+			{
+				"name": "_col7_",
+				"type": "String"
+			},
+			{
+				"name": "_col8_",
+				"type": "String"
+			},
+			{
+				"name": "_col9_",
+				"type": "String"
+			},
+			{
+				"name": "_col10_",
+				"type": "String"
+			},
+			{
+				"name": "_col11_",
+				"type": "String"
+			},
+			{
+				"name": "_col12_",
+				"type": "String"
+			}
+		]
+	}
+}
