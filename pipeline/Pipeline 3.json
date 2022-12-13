@@ -57,7 +57,7 @@
 				}
 			},
 			{
-				"name": "Set reporting",
+				"name": "Set reporting ",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
