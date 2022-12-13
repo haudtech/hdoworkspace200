@@ -23,7 +23,7 @@
 				"value": "@dataset().sheetIndex",
 				"type": "Expression"
 			},
-			"range": "A1:B"
+			"range": "B1:B"
 		},
 		"schema": []
 	}
