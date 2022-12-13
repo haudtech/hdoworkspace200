@@ -99,14 +99,7 @@
 			{
 				"name": "If Condition1",
 				"type": "IfCondition",
-				"dependsOn": [
-					{
-						"activity": "Set dataset name",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
@@ -120,11 +113,6 @@
 			"sheetIndex": {
 				"type": "string",
 				"defaultValue": "1"
-			}
-		},
-		"variables": {
-			"reportname": {
-				"type": "String"
 			}
 		},
 		"annotations": []
