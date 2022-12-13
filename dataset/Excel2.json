@@ -19,7 +19,10 @@
 				"folderPath": "Excel",
 				"fileSystem": "hdofilesystem200"
 			},
-			"sheetIndex": 0,
+			"sheetIndex": {
+				"value": "@dataset().sheetIndex",
+				"type": "Expression"
+			},
 			"range": "A1:B2"
 		},
 		"schema": []
