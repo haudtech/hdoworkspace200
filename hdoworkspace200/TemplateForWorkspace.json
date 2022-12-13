@@ -285,7 +285,7 @@
 											"type": "DataFlowReference",
 											"parameters": {},
 											"datasetParameters": {
-												"source1": {
+												"source7": {
 													"sheetIndex": {
 														"value": "@pipeline().parameters.sheetIndex",
 														"type": "Expression"
@@ -342,8 +342,8 @@
 				},
 				"parameters": {
 					"sheetIndex": {
-						"type": "string",
-						"defaultValue": "1"
+						"type": "int",
+						"defaultValue": 1
 					},
 					"filename": {
 						"type": "string",
@@ -988,7 +988,7 @@
 								"referenceName": "Excel4",
 								"type": "DatasetReference"
 							},
-							"name": "source1"
+							"name": "source7"
 						}
 					],
 					"sinks": [
@@ -1004,8 +1004,8 @@
 					"scriptLines": [
 						"source(allowSchemaDrift: true,",
 						"     validateSchema: false,",
-						"     ignoreNoFilesFound: false) ~> source1",
-						"source1 sink(allowSchemaDrift: true,",
+						"     ignoreNoFilesFound: false) ~> source7",
+						"source7 sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     umask: 0022,",
 						"     preCommands: [],",
