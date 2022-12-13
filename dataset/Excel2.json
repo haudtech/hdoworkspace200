@@ -5,12 +5,21 @@
 			"referenceName": "hdoworkspace200-WorkspaceDefaultStorage",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"sheetIndex": {
+				"type": "int"
+			}
+		},
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"fileName": "test.xlsx",
+				"folderPath": "Excel",
+				"fileSystem": "hdofilesystem200"
 			},
+			"sheetIndex": 0,
 			"range": "A1:B2"
 		},
 		"schema": []
