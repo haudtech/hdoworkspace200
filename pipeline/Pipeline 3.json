@@ -59,14 +59,33 @@
 			{
 				"name": "Set reporting",
 				"type": "SetVariable",
-				"dependsOn": [],
-				"userProperties": []
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "reportname",
+					"value": {
+						"value": "@activity('Lookup1').output.value[1]",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
 			"sheetIndex": {
 				"type": "string",
 				"defaultValue": "1"
+			}
+		},
+		"variables": {
+			"reportname": {
+				"type": "String"
 			}
 		},
 		"annotations": []
