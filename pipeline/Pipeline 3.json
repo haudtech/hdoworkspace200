@@ -96,7 +96,7 @@
 									"type": "DataFlowReference",
 									"datasetParameters": {
 										"source1": {
-											"sheetname": {
+											"sheetindex": {
 												"value": "@pipeline().parameters.sheetIndex",
 												"type": "Expression"
 											},
