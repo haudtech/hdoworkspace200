@@ -97,7 +97,7 @@
 									"datasetParameters": {
 										"source1": {
 											"sheetindex": {
-												"value": "@pipeline().parameters.sheetIndex",
+												"value": "1",
 												"type": "Expression"
 											},
 											"filename": {
