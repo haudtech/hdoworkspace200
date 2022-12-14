@@ -195,9 +195,12 @@
 				"type": "string",
 				"defaultValue": "Parquet"
 			},
-			"rangeofdatasetreportinfo": {
+			"rangeofdatasetreportnameinfo": {
 				"type": "string",
 				"defaultValue": "B1:B3"
+			},
+			"rangeofdataset": {
+				"type": "string"
 			}
 		},
 		"variables": {
