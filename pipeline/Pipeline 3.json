@@ -199,9 +199,9 @@
 			}
 		],
 		"parameters": {
-			"sheetIndex": {
+			"totalsheet": {
 				"type": "int",
-				"defaultValue": 1
+				"defaultValue": 3
 			},
 			"filename": {
 				"type": "string",
