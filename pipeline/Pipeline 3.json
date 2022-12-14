@@ -40,7 +40,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"sheetIndex": {
-											"value": "@pipeline().parameters.sheetIndex",
+											"value": "@item()",
 											"type": "Expression"
 										},
 										"filename": {
