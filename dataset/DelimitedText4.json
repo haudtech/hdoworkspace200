@@ -11,6 +11,9 @@
 			},
 			"csvdirectory": {
 				"type": "string"
+			},
+			"csvfilename": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
