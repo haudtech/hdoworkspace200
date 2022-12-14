@@ -228,7 +228,8 @@
 				"defaultValue": "B1:B3"
 			},
 			"rangeofdataset": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "A5"
 			}
 		},
 		"variables": {
