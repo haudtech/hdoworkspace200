@@ -155,16 +155,6 @@
 												"type": "Expression"
 											}
 										}
-									},
-									"linkedServiceParameters": {
-										"source7": {
-											"schemaLinkedService": {
-												"sheetIndex": {
-													"value": "@pipeline().parameters.sheetIndex",
-													"type": "Expression"
-												}
-											}
-										}
 									}
 								},
 								"compute": {
