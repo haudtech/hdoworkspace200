@@ -168,13 +168,16 @@
 				"defaultValue": "test.xlsx"
 			},
 			"containername": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "hdofilesystem200"
 			},
 			"exceldirectory": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Excel"
 			},
 			"csvdirectory": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "CSV"
 			},
 			"parquetdirectory": {
 				"type": "string"
