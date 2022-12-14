@@ -17,6 +17,9 @@
 			},
 			"exceldirectory": {
 				"type": "string"
+			},
+			"rangeofdatasetreportinfo": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
