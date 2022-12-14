@@ -17,6 +17,9 @@
 			},
 			"exceldirectory": {
 				"type": "string"
+			},
+			"rangeofdataset": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -28,14 +31,23 @@
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"folderPath": "Excel",
-				"fileSystem": "hdofilesystem200"
+				"folderPath": {
+					"value": "@dataset().exceldirectory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().containername",
+					"type": "Expression"
+				}
 			},
 			"sheetIndex": {
 				"value": "@dataset().sheetIndex",
 				"type": "Expression"
 			},
-			"range": "A5",
+			"range": {
+				"value": "@dataset().rangeofdataset",
+				"type": "Expression"
+			},
 			"firstRowAsHeader": true
 		},
 		"schema": []
