@@ -106,6 +106,12 @@
 								"dataflow": {
 									"referenceName": "Dataflow4",
 									"type": "DataFlowReference",
+									"parameters": {
+										"csvfilename": {
+											"value": "'@{concat(variables('datasetname'), variables('reportname'), string(pipeline().parameters.sheetIndex), '.csv')}'",
+											"type": "Expression"
+										}
+									},
 									"datasetParameters": {
 										"source7": {
 											"sheetIndex": {
@@ -115,26 +121,6 @@
 											"filename": {
 												"value": "@pipeline().parameters.filename",
 												"type": "Expression"
-											}
-										},
-										"sink1": {
-											"csvfilename": {
-												"value": "@concat(variables('datasetname'), '_', variables('reportname'), '.csv')",
-												"type": "Expression"
-											}
-										}
-									},
-									"linkedServiceParameters": {
-										"source7": {
-											"schemaLinkedService": {
-												"sheetIndex": {
-													"value": "@pipeline().parameters.sheetIndex",
-													"type": "Expression"
-												},
-												"filename": {
-													"value": "@pipeline().parameters.filename",
-													"type": "Expression"
-												}
 											}
 										}
 									}
