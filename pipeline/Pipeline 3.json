@@ -205,7 +205,7 @@
 			},
 			"filename": {
 				"type": "string",
-				"defaultValue": "test.xlsx"
+				"defaultValue": "test2.xlsx"
 			},
 			"containername": {
 				"type": "string",
