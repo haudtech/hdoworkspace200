@@ -196,7 +196,8 @@
 				"defaultValue": "Parquet"
 			},
 			"rangeofdatasetreportinfo": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "B1:B3"
 			}
 		},
 		"variables": {
