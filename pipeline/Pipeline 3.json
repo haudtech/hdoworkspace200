@@ -190,6 +190,9 @@
 			"parquetdirectory": {
 				"type": "string",
 				"defaultValue": "Parquet"
+			},
+			"rangeofdatasetreportinfo": {
+				"type": "string"
 			}
 		},
 		"variables": {
