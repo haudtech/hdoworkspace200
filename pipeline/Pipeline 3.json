@@ -118,6 +118,18 @@
 										"csvdirectory": {
 											"value": "'@{pipeline().parameters.csvdirectory}'",
 											"type": "Expression"
+										},
+										"sheetindex": {
+											"value": "@pipeline().parameters.sheetIndex",
+											"type": "Expression"
+										},
+										"datasetname": {
+											"value": "'@{variables('datasetname')}'",
+											"type": "Expression"
+										},
+										"reportname": {
+											"value": "'@{variables('reportname')}'",
+											"type": "Expression"
 										}
 									},
 									"datasetParameters": {
