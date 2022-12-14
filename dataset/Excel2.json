@@ -11,6 +11,12 @@
 			},
 			"filename": {
 				"type": "string"
+			},
+			"containername": {
+				"type": "string"
+			},
+			"exceldirectory": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -22,8 +28,14 @@
 					"value": "@dataset().filename",
 					"type": "Expression"
 				},
-				"folderPath": "Excel",
-				"fileSystem": "hdofilesystem200"
+				"folderPath": {
+					"value": "@dataset().exceldirectory",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().containername",
+					"type": "Expression"
+				}
 			},
 			"sheetIndex": {
 				"value": "@dataset().sheetIndex",
