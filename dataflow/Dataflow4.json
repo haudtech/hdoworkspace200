@@ -36,7 +36,7 @@
 				"     ignoreNoFilesFound: false) ~> source7",
 				"source7 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     filePattern:(concat($datasetname, $reportname, toString($sheetindex), '.csv')),",
+				"     filePattern:(concat($datasetname, '_', $reportname, '_', toString($sheetindex), '.csv')),",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
