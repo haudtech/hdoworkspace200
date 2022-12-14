@@ -166,6 +166,18 @@
 			"filename": {
 				"type": "string",
 				"defaultValue": "test.xlsx"
+			},
+			"containername": {
+				"type": "string"
+			},
+			"exceldirectory": {
+				"type": "string"
+			},
+			"csvdirectory": {
+				"type": "string"
+			},
+			"parquetdirectory": {
+				"type": "string"
 			}
 		},
 		"variables": {
