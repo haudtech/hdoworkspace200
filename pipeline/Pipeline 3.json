@@ -42,6 +42,10 @@
 							"exceldirectory": {
 								"value": "@pipeline().parameters.exceldirectory",
 								"type": "Expression"
+							},
+							"rangeofdatasetreportinfo": {
+								"value": "@pipeline().parameters.rangeofdatasetreportinfo",
+								"type": "Expression"
 							}
 						}
 					},
