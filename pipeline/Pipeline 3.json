@@ -40,7 +40,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"sheetIndex": {
-											"value": "@item()",
+											"value": "@int(item())",
 											"type": "Expression"
 										},
 										"filename": {
