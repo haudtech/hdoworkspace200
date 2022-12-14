@@ -38,6 +38,10 @@
 							"containername": {
 								"value": "@pipeline().parameters.containername",
 								"type": "Expression"
+							},
+							"exceldirectory": {
+								"value": "@pipeline().parameters.exceldirectory",
+								"type": "Expression"
 							}
 						}
 					},
