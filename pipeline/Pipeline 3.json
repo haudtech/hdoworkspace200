@@ -207,7 +207,10 @@
 		"parameters": {
 			"totalsheet": {
 				"type": "array",
-				"defaultValue": "[0, 1, "
+				"defaultValue": [
+					0,
+					1
+				]
 			},
 			"filename": {
 				"type": "string",
