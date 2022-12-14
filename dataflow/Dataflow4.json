@@ -23,6 +23,11 @@
 			],
 			"transformations": [],
 			"scriptLines": [
+				"parameters{",
+				"     csvfilename as string,",
+				"     containername as string,",
+				"     csvdirectory as string",
+				"}",
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source7",
