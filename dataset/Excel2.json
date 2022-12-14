@@ -44,7 +44,10 @@
 				"value": "@dataset().sheetIndex",
 				"type": "Expression"
 			},
-			"range": "B1:B3"
+			"range": {
+				"value": "@dataset().rangeofdatasetreportinfo",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
