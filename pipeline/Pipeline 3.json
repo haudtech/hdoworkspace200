@@ -206,8 +206,8 @@
 		"concurrency": 3,
 		"parameters": {
 			"totalsheet": {
-				"type": "int",
-				"defaultValue": 3
+				"type": "array",
+				"defaultValue": "[0, 1, "
 			},
 			"filename": {
 				"type": "string",
