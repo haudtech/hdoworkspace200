@@ -120,7 +120,7 @@
 												"type": "DataFlowReference",
 												"parameters": {
 													"csvfilename": {
-														"value": "'@{concat(variables('datasetname'), variables('reportname'), string(pipeline().parameters.sheetIndex), '.csv')}'",
+														"value": "'@{concat(variables('datasetname'), variables('reportname'), string(item()), '.csv')}'",
 														"type": "Expression"
 													},
 													"containername": {
@@ -132,7 +132,7 @@
 														"type": "Expression"
 													},
 													"sheetindex": {
-														"value": "@pipeline().parameters.sheetIndex",
+														"value": "@item()",
 														"type": "Expression"
 													},
 													"datasetname": {
