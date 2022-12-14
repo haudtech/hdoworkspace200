@@ -11,6 +11,12 @@
 			},
 			"filename": {
 				"type": "string"
+			},
+			"containername": {
+				"type": "string"
+			},
+			"exceldirectory": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
