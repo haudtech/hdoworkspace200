@@ -110,6 +110,14 @@
 										"csvfilename": {
 											"value": "'@{concat(variables('datasetname'), variables('reportname'), string(pipeline().parameters.sheetIndex), '.csv')}'",
 											"type": "Expression"
+										},
+										"containername": {
+											"value": "'@{pipeline().parameters.containername}'",
+											"type": "Expression"
+										},
+										"csvdirectory": {
+											"value": "'@{pipeline().parameters.csvdirectory}'",
+											"type": "Expression"
 										}
 									},
 									"datasetParameters": {
